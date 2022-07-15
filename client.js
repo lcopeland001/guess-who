@@ -13,7 +13,7 @@ function addPictures(){
     console.log('in addPictures');
     for(let pic of people) {
     $('#picture-content').append(`
-    <div> 
+    <div class="profile-pictures> 
     <img src="https://github.com/${pic.githubUsername}.png?size=250" alt="Profile image of ${pic.name}">
     </div>
     `)
@@ -27,13 +27,12 @@ function randomNumber(min, max){
 function randomPerson(){
     console.log('in randomPerson');
         for( let i=0; i<people.length; i+=1){
-            let num = randomNumber(0,4);
-            let randomPerson = people[num];
+             
+            let num = randomNumber(0,(people.length-1));
+            let random = people[num];
             $('#random-person').text(`
-            Click on: ${randomPerson.name}
-            `)
+            Click on: ${random.name}
+            `);
         }
     }
-console.log('Person:', randomPerson.name);
-
 
